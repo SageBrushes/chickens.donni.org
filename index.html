@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐔 Chicken Care Checklist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            color: #764ba2;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .checklist {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .checklist li {
+            margin: 12px 0;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            transition: background 0.3s;
+        }
+        
+        .checklist li:hover {
+            background: #e9ecef;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 12px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .checklist label {
+            cursor: pointer;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .checklist input[type="checkbox"]:checked + label {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid #ffc107;
+        }
+        
+        .resources {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e7f3ff;
+            border-radius: 12px;
+        }
+        
+        .resources h3 {
+            color: #0066cc;
+            margin-top: 0;
+        }
+        
+        .resources a {
+            color: #0066cc;
+            text-decoration: none;
+            display: block;
+            margin: 8px 0;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .resources a:hover {
+            background: rgba(0, 102, 204, 0.1);
+            text-decoration: underline;
+        }
+        
+        .codes {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 2px solid #ffcc00;
+        }
+        
+        .codes strong {
+            color: #cc8800;
+        }
+        
+        .reset-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        
+        .reset-btn:hover {
+            background: #c82333;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐔 Daily Chicken Care Checklist</h1>
+        
+        <h2>AM — anytime from 7am on</h2>
+        <ul class="checklist" id="am-checklist">
+            <li>
+                <input type="checkbox" id="am1">
+                <label for="am1">Let chickens out of the coop into the run and prop the door open</label>
+            </li>
+            <li>
+                <input type="checkbox" id="am2">
+                <label for="am2">Sprinkle a handful of treats around the run</label>
+            </li>
+            <li>
+                <input type="checkbox" id="am3">
+                <label for="am3">Sprinkle a handful of calendula flowers in the nesting boxes</label>
+            </li>
+            <li>
+                <input type="checkbox" id="am4">
+                <label for="am4">Collect eggs (put them in a pink egg carton and leave in the shed to be donated to CHiPS)</label>
+            </li>
+        </ul>
+        <div class="warning">🔒 LOCK THE RUN</div>
+        
+        <h2>PM — 5-6pm</h2>
+        <p style="font-style: italic; margin-bottom: 15px; color: #666;">(earlier is fine when it's getting dark early. Please put chickens away early if there's going to be bad weather)</p>
+        <ul class="checklist" id="pm-checklist">
+            <li>
+                <input type="checkbox" id="pm1">
+                <label for="pm1">Get chickens back in the coop (just the coop, they don't need to be in the hen house)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pm2">
+                <label for="pm2">Collect eggs</label>
+            </li>
+            <li>
+                <input type="checkbox" id="pm3">
+                <label for="pm3">Look for leftover food scraps in the bedding. If there are scraps the chickens aren't eating, collect them and put them in the compost bin and close up and spin the bin.</label>
+            </li>
+        </ul>
+        <div class="warning">🔒 LOCK THE COOP</div>
+        
+        <h2>School Break Chicken Checklist</h2>
+        <p style="font-style: italic; margin-bottom: 15px; color: #666;">(in addition to the lists above)</p>
+        
+        <h3>Once a week:</h3>
+        <ul class="checklist" id="weekly-checklist">
+            <li>
+                <input type="checkbox" id="weekly1">
+                <label for="weekly1">Check for weeds, brown foliage, and rotten veg, and put anything you pull out in the compost</label>
+            </li>
+            <li>
+                <input type="checkbox" id="weekly2">
+                <label for="weekly2">Change the chickens' water</label>
+            </li>
+            <li>
+                <input type="checkbox" id="weekly3">
+                <label for="weekly3">Fill the chickens' oyster shells</label>
+            </li>
+            <li>
+                <input type="checkbox" id="weekly4">
+                <label for="weekly4">Check the chicken food — if it's clean, add a little more. If it looks wet or clumpy, dump in the compost and refill</label>
+            </li>
+        </ul>
+        
+        <h3>As needed:</h3>
+        <ul class="checklist" id="asneeded-checklist">
+            <li>
+                <input type="checkbox" id="an1">
+                <label for="an1">If the garden is looking dry, please water planters in the garden and around the front of the building</label>
+            </li>
+            <li>
+                <input type="checkbox" id="an2">
+                <label for="an2">If there are vegetables that won't survive until the next school day, harvest and keep, feed to chickens, or hold onto for the next Wednesday CHiPS donation</label>
+            </li>
+            <li>
+                <input type="checkbox" id="an3">
+                <label for="an3">If you've put stuff in the compost bin, spin the bin a couple times</label>
+            </li>
+            <li>
+                <input type="checkbox" id="an4">
+                <label for="an4">When leaving, make sure the shed is closed and the gate is locked!</label>
+            </li>
+        </ul>
+        
+        <div class="warning" style="background: #d4edda; color: #155724; border-color: #28a745;">
+            ✨ Thank you everyone for all your help!!!
+        </div>
+        
+        <div class="resources">
+            <h3>📚 Training Resources</h3>
+            <a href="https://photos.app.goo.gl/gEcJvc72xapLUnae6" target="_blank">🌿 Quick tour of the garden</a>
+            <a href="https://photos.app.goo.gl/DtrjgjLfMaGGFT269" target="_blank">🐔 How to hold a chicken</a>
+            <a href="https://photos.app.goo.gl/oqbsqPcwqByC25FZA" target="_blank">💧 How to water the plants</a>
+            <a href="https://photos.app.goo.gl/wNzwH7WimTnnHDa18" target="_blank">🌱 How to maintain the garden</a>
+            <a href="https://photos.app.goo.gl/FJ2wBDHH7v1aSzo57" target="_blank">🐓 How to take care of the chickens</a>
+            <a href="https://photos.google.com/share/AF1QipMQScwoVeRVhm0FfL6zWjnXm8xnpcitt5trV6r7d6CimthYnH6kAkUQdGU733xqdQ/photo/AF1QipPWPAbIIpjMtDjwATv8i3uREzxKL0IyEsKjwELW?key=T1k0WExHUUREOUVvT1d4MWZRZklMZlJncnBOd29B" target="_blank">🦪 How to fill the chickens' oyster shells</a>
+            <a href="https://photos.app.goo.gl/ebdDtZASirveCiyj7" target="_blank">📁 Training video folder</a>
+        </div>
+        
+        <div class="codes">
+            <p><strong>🔐 Lockbox Code:</strong> 190</p>
+            <p><strong>🔐 Shed Lock Code:</strong> 706</p>
+        </div>
+        
+        <button class="reset-btn" onclick="resetChecklist()">Reset All Checkboxes</button>
+    </div>
+    
+    <script>
+        // Save checkbox state to localStorage
+        function saveCheckboxState() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const states = {};
+            checkboxes.forEach(cb => {
+                states[cb.id] = cb.checked;
+            });
+            localStorage.setItem('chickenChecklistState', JSON.stringify(states));
+        }
+        
+        // Load checkbox state from localStorage
+        function loadCheckboxState() {
+            const saved = localStorage.getItem('chickenChecklistState');
+            if (saved) {
+                const states = JSON.parse(saved);
+                Object.keys(states).forEach(id => {
+                    const checkbox = document.getElementById(id);
+                    if (checkbox) {
+                        checkbox.checked = states[id];
+                    }
+                });
+            }
+        }
+        
+        // Reset all checkboxes
+        function resetChecklist() {
+            if (confirm('Are you sure you want to reset all checkboxes?')) {
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(cb => cb.checked = false);
+                saveCheckboxState();
+            }
+        }
+        
+        // Add event listeners to all checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+            cb.addEventListener('change', saveCheckboxState);
+        });
+        
+        // Load state when page loads
+        loadCheckboxState();
+    </script>
+</body>
+</html>
