@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🐔 Chicken Care Checklist</title>
+    <script src="https://cdn.jwplayer.com/libraries/7Oaiin0G.js"></script>
     <style>
         * {
             margin: 0;
@@ -125,6 +126,18 @@
         .resources a:hover {
             background: rgba(0, 102, 204, 0.1);
             text-decoration: underline;
+        }
+
+        .video-player {
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #0066cc;
         }
         
         .codes {
@@ -263,12 +276,19 @@
         </div>
         
         <div class="resources">
-            <h3>📚 Training Resources</h3>
-            <p style="margin-bottom: 10px; font-size: 14px; color: #666;"><em>Note: Videos are hosted on JW Player. Click to watch training videos.</em></p>
-            <a href="https://cdn.jwplayer.com/videos/5uUndsRa" target="_blank">🌿 Garden Tour (Video 1)</a>
-            <a href="https://cdn.jwplayer.com/videos/4unTPmd6" target="_blank">🐔 Chicken Video 2</a>
-            <a href="https://cdn.jwplayer.com/videos/TtkBNsSh" target="_blank">💧 Chicken Video 3</a>
-            <a href="https://cdn.jwplayer.com/videos/4eVwsecv" target="_blank">🌱 Chicken Video 4</a>
+            <h3>📚 Training Videos</h3>
+
+            <div class="video-title">🌿 Garden Tour</div>
+            <div id="player1" class="video-player"></div>
+
+            <div class="video-title">🐔 Chicken Video 2</div>
+            <div id="player2" class="video-player"></div>
+
+            <div class="video-title">💧 Chicken Video 3</div>
+            <div id="player3" class="video-player"></div>
+
+            <div class="video-title">🌱 Chicken Video 4</div>
+            <div id="player4" class="video-player"></div>
         </div>
         
         <div class="codes">
@@ -320,6 +340,31 @@
         
         // Load state when page loads
         loadCheckboxState();
+
+        // Initialize JW Players
+        jwplayer("player1").setup({
+            "playlist": "https://cdn.jwplayer.com/v2/media/5uUndsRa",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
+
+        jwplayer("player2").setup({
+            "playlist": "https://cdn.jwplayer.com/v2/media/4unTPmd6",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
+
+        jwplayer("player3").setup({
+            "playlist": "https://cdn.jwplayer.com/v2/media/TtkBNsSh",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
+
+        jwplayer("player4").setup({
+            "playlist": "https://cdn.jwplayer.com/v2/media/4eVwsecv",
+            "width": "100%",
+            "aspectratio": "16:9"
+        });
     </script>
 </body>
 </html>
